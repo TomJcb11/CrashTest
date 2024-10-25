@@ -1,0 +1,108 @@
+/* Style global */
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+  padding: 20px;
+  background-color: #ffffff; /* Fond blanc */
+  color: #333333; /* Couleur de texte principale */
+}
+
+/* Titres avec nuances de vert */
+h1 {
+  color: #27ae60; /* Vert foncé */
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: #2ecc71; /* Vert normal */
+  margin-bottom: 10px;
+}
+
+h3 {
+  color: #3ce6a6; /* Vert clair */
+  margin-bottom: 10px;
+}
+
+h4 {
+  color: #a8e6cf; /* Vert très clair */
+  margin-bottom: 10px;
+}
+
+/* Liens */
+a {
+  color: #2ecc71; /* Couleur verte pour les liens */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Code */
+code {
+  background-color: #f4f4f4; /* Fond gris clair pour le code */
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: "Courier New", Courier, monospace;
+  white-space: pre-wrap;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px 0;
+}
+
+/* Tableaux */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+th,
+td {
+  border: 1px solid #dddddd; /* Bordure grise claire */
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #2ecc71; /* Fond vert pour les en-têtes de tableau */
+  color: white; /* Texte blanc pour les en-têtes */
+}
+
+/* Listes */
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+ol {
+  padding-left: 20px;
+}
+
+/* Citations */
+blockquote {
+  margin: 10px 0;
+  padding: 10px;
+  background: #e7f1ff; /* Fond bleu clair pour les citations */
+  border-left: 4px solid #2ecc71; /* Bordure verte pour les citations */
+}
+
+/* Alertes */
+.alert {
+  padding: 15px;
+  margin: 20px 0;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.alert-info {
+  background-color: #d9edf7; /* Fond bleu clair pour les alertes */
+  border-color: #bce8f1; /* Bordure bleu clair */
+  color: #31708f; /* Couleur du texte bleu foncé */
+}

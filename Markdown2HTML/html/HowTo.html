@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+        <html lang="fr">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>HowTo</title>
+            <link rel="stylesheet" href="../css/styles.css">
+        </head>
+        <body>
+            <h1>Documentation du Programme de Conversion Markdown vers HTML</h1>
+
+<h2>Table des Matières</h2>
+
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#fonctionnalites">Fonctionnalités</a></li>
+<li><a href="#prerequis">Prérequis</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#utilisation">Utilisation</a></li>
+<li><a href="#structure-des-fichiers">Structure des Fichiers</a></li>
+<li><a href="#fonctionnement-du-code">Fonctionnement du Code</a></li>
+<li><a href="#personnalisation">Personnalisation</a></li>
+<li><a href="#contributions">Contributions</a></li>
+<li><a href="#licences">Licences</a></li>
+</ul>
+
+<h2>Introduction</h2>
+
+<p>Ce programme permet de convertir des fichiers Markdown (.md) en fichiers HTML. Il facilite la création de documents HTML à partir de Markdown, en intégrant des tableaux, des images, des liens, et d'autres éléments typiques du Markdown.</p>
+
+<h2>Fonctionnalités</h2>
+
+<ul>
+<li>Conversion de fichiers Markdown en HTML.</li>
+<li>Prise en charge des tableaux Markdown grâce à la bibliothèque markdown2.</li>
+<li>Génération automatique des fichiers HTML dans un répertoire spécifique.</li>
+<li>Gestion des fichiers existants pour éviter les doublons.</li>
+<li>Styles CSS intégrés pour un rendu esthétique des documents HTML.</li>
+</ul>
+
+<h2>Prérequis</h2>
+
+<p>Avant d'exécuter le programme, assurez-vous d'avoir les éléments suivants :</p>
+
+<ul>
+<li>Python 3.x installé sur votre machine.</li>
+<li>Bibliothèque markdown2 installée. Vous pouvez l'installer via pip :</li>
+</ul>
+
+<p><code>bash
+pip install markdown2
+</code></p>
+
+<h2>Installation</h2>
+
+<p>Clonez le dépôt ou téléchargez le code source. Assurez-vous d'avoir la structure de fichiers suivante :</p>
+
+<p><code>css
+.
+├── Markdown2HTML.py
+├── css
+│   └── styles.css
+├── md
+│   ├── exemple.md
+│   ├── 1.md
+│   ├── 2.md
+│   └── 3.md
+└── html
+</code></p>
+
+<h2>Utilisation</h2>
+
+<p>Placez vos fichiers Markdown (.md) dans le dossier md.</p>
+
+<p>Exécutez le programme avec la commande suivante :</p>
+
+<p><code>bash
+python Markdown2HTML.py
+</code></p>
+
+<p>Les fichiers HTML générés seront sauvegardés dans le dossier html.</p>
+
+<h2>Structure des Fichiers</h2>
+
+<ul>
+<li><code>Markdown2HTML.py</code> : Fichier principal qui effectue la conversion.</li>
+<li><code>css/styles.css</code> : Fichier CSS qui définit le style des fichiers HTML générés.</li>
+<li><code>md/</code> : Répertoire contenant les fichiers Markdown à convertir.</li>
+<li><code>html/</code> : Répertoire où les fichiers HTML générés seront stockés.</li>
+</ul>
+
+<h2>Fonctionnement du Code</h2>
+
+<h3>Importation des Bibliothèques</h3>
+
+<p>Le programme commence par importer les bibliothèques nécessaires :</p>
+
+<p><code>python
+import os
+import glob
+from pathlib import Path
+import markdown2
+</code></p>
+
+<h3>Fonction de Traduction</h3>
+
+<p>La fonction <code>Translate(MDfile)</code> lit un fichier Markdown, le convertit en HTML et écrit le résultat dans un nouveau fichier HTML. Elle gère également les erreurs si le fichier Markdown n'existe pas.</p>
+
+<h3>Lecture des Fichiers</h3>
+
+<p>Le programme lit tous les fichiers Markdown dans le répertoire md et vérifie ceux qui n'ont pas encore été convertis en HTML. Pour ce faire, il utilise la bibliothèque glob pour lister les fichiers Markdown et HTML.</p>
+
+<h3>Conversion des Fichiers</h3>
+
+<p>Pour chaque fichier Markdown non converti, la fonction <code>Translate</code> est appelée, ce qui permet de créer les fichiers HTML dans le dossier html.</p>
+
+<h3>Application du CSS</h3>
+
+<p>Un lien vers le fichier CSS est inclus dans chaque fichier HTML généré pour appliquer le style souhaité.</p>
+
+<h2>Personnalisation</h2>
+
+<h3>Modification du CSS</h3>
+
+<p>Pour personnaliser l'apparence des fichiers HTML générés, modifiez le fichier <code>styles.css</code> en fonction de vos préférences.</p>
+
+        </body>
+        </html>
+        

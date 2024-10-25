@@ -1,8 +1,7 @@
 import os
 import glob
 from pathlib import Path
-import markdown
-
+import markdown2
 
 def Translate(MDfile):
     """
@@ -22,14 +21,29 @@ def Translate(MDfile):
         md_content = file.read()
 
     # Convertir le Markdown en HTML
-    html_content = markdown.markdown(md_content)
+   # Convertir le Markdown en HTML avec markdown2
+    html_content = markdown2.markdown(md_content, extras=["tables"])
 
     # Créer le nom du fichier HTML
     html_file = f"./html/{Path(MDfile).stem}.html"
 
-    # Écrire le contenu HTML dans un nouveau fichier
+   # Ajouter la déclaration de style CSS
+    html_output = f"""<!DOCTYPE html>
+        <html lang="fr">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>{Path(html_file).stem}</title>
+            <link rel="stylesheet" href="../css/styles.css">
+        </head>
+        <body>
+            {html_content}
+        </body>
+        </html>
+        """
+# Écrire le contenu HTML dans un nouveau fichier
     with open(html_file, 'w', encoding='utf-8') as file:
-        file.write(html_content)
+        file.write(html_output)
     
     print(f"Le fichier {MDfile} a été traduit en {html_file}.")
     
