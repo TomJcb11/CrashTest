@@ -1,19 +1,6 @@
 
 # Documentation du Programme de Conversion Markdown vers HTML
 
-## Table des Matières
-
-- [Introduction](#introduction)
-- [Fonctionnalités](#fonctionnalites)
-- [Prérequis](#prerequis)
-- [Installation](#installation)
-- [Utilisation](#utilisation)
-- [Structure des Fichiers](#structure-des-fichiers)
-- [Fonctionnement du Code](#fonctionnement-du-code)
-- [Personnalisation](#personnalisation)
-- [Contributions](#contributions)
-- [Licences](#licences)
-
 ## Introduction
 
 Ce programme permet de convertir des fichiers Markdown (.md) en fichiers HTML. Il facilite la création de documents HTML à partir de Markdown, en intégrant des tableaux, des images, des liens, et d'autres éléments typiques du Markdown.
