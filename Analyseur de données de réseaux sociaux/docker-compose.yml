@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  influxdb:
+    image: influxdb:latest
+    container_name: influxdb
+    restart: unless-stopped
+    ports:
+      - "8086:8086" # InfluxDB port
+    volumes:
+      - influxdb_data:/var/lib/influxdb # Persist data in a Docker volume
+    environment:
+      INFLUXDB_DB: my_database # Optional: Create a default database
+      INFLUXDB_ADMIN_USER: TrendlyAdmin # Optional: Admin username
+      INFLUXDB_ADMIN_PASSWORD: TrendlyAdminSecret # Optional: Admin password
+
+volumes:
+  influxdb_data:
+    driver: local

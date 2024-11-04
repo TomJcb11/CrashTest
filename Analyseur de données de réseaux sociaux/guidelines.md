@@ -1,4 +1,4 @@
-# Analyseur de Données de Réseaux Sociaux
+# Analyseur de Données de Réseaux Sociaux _(Trendly\*\*)_
 
 ## Étapes de Réalisation
 
