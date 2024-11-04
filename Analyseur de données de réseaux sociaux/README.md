@@ -23,7 +23,7 @@ Ce projet consiste à créer un analyseur qui récupère des données de réseau
 
 - Gérer l'authentification API et les quotas de requêtes.
 - Nettoyer et prétraiter les données récupérées.
-- Optimiser l’analyse pour traiter efficacement de grandes quantités de données.
+- Optimiser l'analyse pour traiter efficacement de grandes quantités de données.
 
 ## Extensions possibles
 
