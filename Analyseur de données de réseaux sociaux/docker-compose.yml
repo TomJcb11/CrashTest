@@ -1,19 +1,19 @@
 version: "3"
 
 services:
-  influxdb:
-    image: influxdb:latest
-    container_name: influxdb
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
     restart: unless-stopped
     ports:
-      - "8086:8086" # InfluxDB port
+      - "27017:27017" # MongoDB port
     volumes:
-      - influxdb_data:/var/lib/influxdb # Persist data in a Docker volume
+      - mongodb_data:/data/db # Persist data in a Docker volume
     environment:
-      INFLUXDB_DB: my_database # Optional: Create a default database
-      INFLUXDB_ADMIN_USER: TrendlyAdmin # Optional: Admin username
-      INFLUXDB_ADMIN_PASSWORD: TrendlyAdminSecret # Optional: Admin password
+      MONGO_INITDB_DATABASE: my_database # Optional: Create a default database
+      MONGO_INITDB_ROOT_USERNAME: TrendlyAdmin # Optional: Admin username
+      MONGO_INITDB_ROOT_PASSWORD: TrendlyAdminSecret # Optional: Admin password
 
 volumes:
-  influxdb_data:
+  mongodb_data:
     driver: local

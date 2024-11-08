@@ -1,41 +1,38 @@
-"""import influxdb_client, os, time
-from influxdb_client import InfluxDBClient, Point, WritePrecision
-from influxdb_client.client.write_api import SYNCHRONOUS
+from config import MONGODB_URI
+from pymongo import MongoClient
 
-token = os.environ.get("INFLUXDB_TOKEN")
-bucket="Trendly"
-org = "Trendly"
-url = "http://localhost:8086"
-token = "RQ2PSWUiYMk6v3GyPiD-yJ7NpkpAJATgrJfdWGxdJ3wwCBprxAy72C7URJtnG4Qc1b3mSxpQa_Bm4h3OJ8l_FA=="
+def connect_to_mongodb():
+    client = MongoClient(MONGODB_URI)
+    db = client.my_database
+    return db
 
-client = influxdb_client.InfluxDBClient(
-   url=url,
-   token=token,
-   org=org
-)
+def insert_one_document(collection, document):
+    result = collection.insert_one(document)
+    return result.inserted_id
 
+def insert_many_documents(collection, documents):
+    result = collection.insert_many(documents)
+    return result.inserted_ids
 
-write_api = client.write_api(write_options=SYNCHRONOUS)
-   
-p = influxdb_client.Point("my_measurement").tag("location", "Prague").field("temperature", 25.3)
-write_api.write(bucket=bucket, org=org, record=p)
+def main():
+    # Utiliser les configurations pour se connecter à MongoDB
+    db = connect_to_mongodb()
+    print("Connected to MongoDB")
+    
+    # Exemple d'insertion d'un document dans la colection my_collection
+    collection = db.countryAPI
+    document = {"name": "John Doe", "age": 30, "email": "john.doe@example.com"}
+    
+    document_id = insert_one_document(collection, document)
+    print(f"Document inserted with id: {document_id}")
 
-
-query_api = client.query_api()
-
-query = 'from(bucket:"Trendly")\
-|> range(start: -10m)\
-|> filter(fn:(r) => r._measurement == "my_measurement")\
-|> filter(fn:(r) => r.location == "Prague")\
-|> filter(fn:(r) => r._field == "temperature")'
-
-result = query_api.query(org=org, query=query)
-
-
-results = []
-for table in result:
-  for record in table.records:
-    results.append((record.get_field(), record.get_value()))
-
-print(results)
-[(temperature, 25.3)]"""
+    # Exemple d'insertion de plusieurs documents
+    documents = [
+        {"name": "Jane Doe", "age": 25, "email": "jane.doe@example.com"},
+        {"name": "Alice", "age": 28, "email": "alice@example.com"}
+    ]
+    document_ids = insert_many_documents(collection, documents)
+    print(f"Documents inserted with ids: {document_ids}")
+    
+if __name__ == "__main__":
+    main()
