@@ -1,4 +1,4 @@
-from config import MONGODB_URI
+from pages.config import MONGODB_URI
 from pymongo import MongoClient
 
 def connect_to_mongodb():
