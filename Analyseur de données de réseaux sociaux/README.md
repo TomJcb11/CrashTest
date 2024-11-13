@@ -41,3 +41,5 @@ Ce projet constitue un excellent support pour la data science pour plusieurs rai
 -**Préparation des Données** : Les fonctions de traitement des données intégrées permettent de nettoyer et de structurer les données de manière efficace, facilitant ainsi leur utilisation pour des modèles de machine learning ou d'autres analyses statistiques.
 
 -**Communication des Résultats** : Les visualisations interactives sont un moyen puissant de communiquer les résultats des analyses de données à des audiences non techniques, rendant les insights plus accessibles et compréhensibles.
+
+<video src="./assets/démo streamlit_plotly.mp4" controls></video>
