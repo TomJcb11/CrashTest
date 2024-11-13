@@ -1,5 +1,5 @@
 import requests
-from pages.config import MONGODB_URI
+from DB.APIkey import MONGODB_URI
 from pymongo import MongoClient
 
 europe_countries = [

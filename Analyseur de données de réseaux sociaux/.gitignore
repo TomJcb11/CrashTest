@@ -1,0 +1,14 @@
+# Ignorer les répertoires __pycache__
+__pycache__/
+
+# Ignorer les fichiers bytecode compilés
+*.pyc
+
+# Ignorer les fichiers de configuration spécifiques à l'IDE
+.vscode/
+.idea/
+*.swp
+
+#fichier de clé api 
+/DB/APIkey.py
+/__pycache__
