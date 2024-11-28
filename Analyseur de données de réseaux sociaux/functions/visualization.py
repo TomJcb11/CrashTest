@@ -1,7 +1,13 @@
 import plotly.graph_objects as go
+import pandas as pd
 
 def create_colored_world_map(df, selected_indicator, year, show_ocean, projection_type, colorscale):
     df_filtered = df[df['year'] == year]
+    
+    # Vérifiez que les données sont de type numérique
+    if not pd.api.types.is_numeric_dtype(df_filtered[selected_indicator]):
+        raise TypeError(f"Les données pour l'indicateur sélectionné '{selected_indicator}' ne sont pas de type numérique.")
+    
     df_pivot = df_filtered.pivot_table(index='country', values=selected_indicator, fill_value=0).reset_index()
     
     # Vérifiez que la colonne selected_indicator existe dans le DataFrame pivoté
