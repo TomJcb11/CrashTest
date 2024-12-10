@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import time
 
-#import des différentes fonctions 
+# Import des différentes fonctions 
 from DB.queries import get_all_country_data, get_unique_properties
 from functions.data_processing import process_country_data
 from functions.visualization import create_colored_world_map
@@ -29,7 +29,7 @@ with tab1:
     selected_indicator = st.selectbox("Sélectionnez un indicateur", unique_properties)
     
     # Activer le mode "time lapse"
-    time_lapse = st.toggle("Activer le mode Time Lapse")
+    time_lapse = st.checkbox("Activer le mode Time Lapse")
     
     if time_lapse:
         years = sorted(df['year'].unique())
@@ -37,14 +37,14 @@ with tab1:
         timelapse = [start_year, end_year]
     else:
         years = df['year'].unique()
-        selected_year = st.select_slider("Sélectionnez une année", options=sorted(years), value=(years[0]))
+        selected_year = st.select_slider("Sélectionnez une année", options=sorted(years), value=years[0])
         timelapse = selected_year
     
     # Créer un modal pour les options de personnalisation
     @st.dialog("Options de personnalisation")
     def customize_options():
         st.write("Options de personnalisation")
-        show_ocean = st.toggle("Afficher les océans", value=True)
+        show_ocean = st.checkbox("Afficher les océans", value=True)
         projection_type = st.radio("Type de projection", ('equirectangular', 'mercator', 'orthographic', 'natural earth', 'kavrayskiy7', 'miller', 'robinson', 'eckert4', 'azimuthal equal area'))
         colorscale = st.selectbox("Échelle de couleurs", list(colorscales.keys()))
         if st.button("Appliquer"):
@@ -72,7 +72,7 @@ with tab1:
         st.session_state.modal_open = True
         customize_options()
     
-      # Fonction pour jouer l'animation
+    # Fonction pour jouer l'animation
     def play_animation(start_year, end_year, available_years):
         animation_container = st.empty()
         for year in available_years:
@@ -114,4 +114,5 @@ with tab1:
 with tab2:
     st.title("Liste des Pays")
     selected_countries = st.multiselect("Sélectionnez un ou plusieurs pays", df['country'].unique())
-    
+    if selected_countries:
+       pass

@@ -22,4 +22,9 @@ def process_country_data(data):
                     all_data.append(entry)
     
     df = pd.DataFrame(all_data)
+    # Convertir les colonnes numériques en type float
+    for col in df.columns:
+        if col not in ['country', 'region', 'type', 'year']:
+            df[col] = pd.to_numeric(df[col], errors='coerce')
+    
     return df
