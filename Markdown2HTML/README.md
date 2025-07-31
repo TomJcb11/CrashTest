@@ -48,7 +48,7 @@ Placez vos fichiers Markdown (.md) dans le dossier md.
 Exécutez le programme avec la commande suivante :
 
 ```bash
-python Markdown2HTML.py
+
 ```
 
 Les fichiers HTML générés seront sauvegardés dans le dossier html.

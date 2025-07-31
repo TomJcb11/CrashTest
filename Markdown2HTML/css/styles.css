@@ -39,13 +39,23 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Code */
-code {
-  background-color: #f4f4f4; /* Fond gris clair pour le code */
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-family: "Courier New", Courier, monospace;
-  white-space: pre-wrap;
+/* Code block */
+pre {
+  background-color: #f0f0f0;
+  padding: 1em;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: 'Fira Code', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Optionnel : style du <code> à l’intérieur de <pre> */
+pre > code {
+  background: none;
+  padding: 0;
+  color: inherit;
 }
 
 /* Images */
